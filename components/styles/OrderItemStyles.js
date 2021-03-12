@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const OrderItemStyles = styled.li`
   box-shadow: var(--bs);
@@ -6,12 +6,11 @@ const OrderItemStyles = styled.li`
   padding: 2rem;
   border: 1px solid var(--offWhite);
   h2 {
-    border-bottom: 2px solid rgb(110, 2, 83);
+    border-bottom: 2px solid var(--theme-main);
     margin-top: 0;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
   }
-
   .images {
     display: grid;
     grid-gap: 10px;

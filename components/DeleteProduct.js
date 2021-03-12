@@ -1,4 +1,5 @@
-import { gql, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
+import gql from "graphql-tag";
 
 const DELETE_PRODUCT_MUTATION = gql`
   mutation DELETE_PRODUCT_MUTATION($id: ID!) {
@@ -8,8 +9,10 @@ const DELETE_PRODUCT_MUTATION = gql`
     }
   }
 `;
+
 function update(cache, payload) {
-  console.log("running update after delete");
+  console.log(payload);
+  console.log("running the update function after delete");
   cache.evict(cache.identify(payload.data.deleteProduct));
 }
 export default function DeleteProduct({ id, children }) {
@@ -17,11 +20,17 @@ export default function DeleteProduct({ id, children }) {
     DELETE_PRODUCT_MUTATION,
     {
       variables: { id },
-      update: update,
+      update,
     }
   );
   return (
     <button
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontFamily: "radnika_next",
+      }}
       type="button"
       disabled={loading}
       onClick={() => {

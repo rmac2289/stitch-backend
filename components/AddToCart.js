@@ -1,6 +1,9 @@
 import { useMutation } from "@apollo/client";
 import gql from "graphql-tag";
 import { CURRENT_USER_QUERY } from "./User";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-svg-core";
 
 const ADD_TO_CART_MUTATION = gql`
   mutation ADD_TO_CART_MUTATION($id: ID!) {
@@ -16,8 +19,21 @@ export default function AddToCart({ id }) {
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
   return (
-    <button disabled={loading} type="button" onClick={addToCart}>
-      Add{loading && "ing"} To Cart 🛒
+    <button
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontFamily: "radnika_next",
+      }}
+      disabled={loading}
+      type="button"
+      onClick={addToCart}
+    >
+      Add{loading && "ing"} To Cart{" "}
+      <span style={{ fontSize: "12px", marginLeft: "5px" }}>
+        <FontAwesomeIcon icon={faShoppingCart} />
+      </span>
     </button>
   );
 }

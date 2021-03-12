@@ -5,6 +5,9 @@ import debounce from "lodash.debounce";
 import { useRouter } from "next/dist/client/router";
 import { DropDown, DropDownItem, SearchStyles } from "./styles/DropDown";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 const SEARCH_PRODUCTS_QUERY = gql`
   query SEARCH_PRODUCTS_QUERY($searchTerm: String!) {
     searchTerms: allProducts(
@@ -67,15 +70,15 @@ export default function Search() {
         <input
           {...getInputProps({
             type: "search",
-            placeholder: "Search for an Item",
+            placeholder: "🔍 Search for an Item",
             id: "search",
-            className: loading ? "loading" : "",
+            className: loading ? "loading" : null,
           })}
         />
       </div>
       <DropDown {...getMenuProps()}>
         {isOpen &&
-          items?.map((item, index) => (
+          items.map((item, index) => (
             <DropDownItem
               {...getItemProps({ item })}
               key={item.id}

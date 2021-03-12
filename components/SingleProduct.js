@@ -1,6 +1,9 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import gql from "graphql-tag";
 import Head from "next/head";
 import styled from "styled-components";
+import formatMoney from "../lib/formatMoney";
+import AddToCart from "./AddToCart";
 import DisplayError from "./ErrorMessage";
 
 const ProductStyles = styled.div`
@@ -44,10 +47,11 @@ export default function SingleProduct({ id }) {
   if (loading) return <p>Loading...</p>;
   if (error) return <DisplayError error={error} />;
   const { Product } = data;
+  console.log(Product);
   return (
     <ProductStyles>
       <Head>
-        <title>Sick Stitch | {Product.name}</title>
+        <title>Stitches by Nicole | {Product.name}</title>
       </Head>
       <img
         src={Product.photo.image.publicUrlTransformed}
@@ -56,6 +60,8 @@ export default function SingleProduct({ id }) {
       <div className="details">
         <h2>{Product.name}</h2>
         <p>{Product.description}</p>
+        <p>{formatMoney(Product.price)}</p>
+        <AddToCart id={Product.id} />
       </div>
     </ProductStyles>
   );

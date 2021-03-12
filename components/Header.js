@@ -9,11 +9,10 @@ const Logo = styled.h1`
   margin-left: 2rem;
   position: relative;
   z-index: 2;
-  background: rgb(110, 2, 83);
+  background: var(--theme-main);
   a {
     color: white;
     text-decoration: none;
-    text-transform: uppercase;
     padding: 0.5rem 1rem;
     transition: 0.25s all linear;
   }
@@ -23,8 +22,13 @@ const Logo = styled.h1`
 `;
 
 const HeaderStyles = styled.header`
+  background: url(background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
   .bar {
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid var(--theme-main);
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
@@ -42,7 +46,7 @@ export default function Header() {
     <HeaderStyles>
       <div className="bar">
         <Logo>
-          <Link href="/">Stitches by Nicole</Link>
+          <Link href="/">Stitched by Nicole</Link>
         </Logo>
         <Nav />
       </div>

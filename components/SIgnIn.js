@@ -1,4 +1,5 @@
-import { gql, useMutation } from "@apollo/client";
+import gql from "graphql-tag";
+import { useMutation } from "@apollo/client";
 import Form from "./styles/Form";
 import useForm from "../lib/useForm";
 import { CURRENT_USER_QUERY } from "./User";
@@ -29,12 +30,14 @@ export default function SignIn() {
   });
   const [signin, { data, loading }] = useMutation(SIGNIN_MUTATION, {
     variables: inputs,
-    // refectch the currently logged in user
+    // refetch the currently logged in user
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
+  console.log(data);
   async function handleSubmit(e) {
-    e.preventDefault();
-    await signin();
+    e.preventDefault(); // stop the form from submitting
+    const res = await signin();
+    console.log(res);
     resetForm();
     // Send the email and password to the graphqlAPI
   }
@@ -70,7 +73,7 @@ export default function SignIn() {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Sign In!</button>
+        <button type="submit">Sign In</button>
       </fieldset>
     </Form>
   );

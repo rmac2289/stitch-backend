@@ -7,7 +7,7 @@ const BigButton = styled.button`
   background: none;
   border: 0;
   &:hover {
-    color: rgb(110, 2, 83);
+    color: var(--purple);
     cursor: pointer;
   }
 `;
@@ -28,6 +28,12 @@ export default function RemoveFromCart({ id }) {
   const [removeFromCart, { loading }] = useMutation(REMOVE_FROM_CART_MUTATION, {
     variables: { id },
     update,
+    // optimisticResponse: {
+    //   deleteCartItem: {
+    //     __typename: 'CartItem',
+    //     id,
+    //   },
+    // },
   });
   return (
     <BigButton

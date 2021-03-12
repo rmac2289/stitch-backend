@@ -1,4 +1,5 @@
-import { gql, useMutation, useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
+import gql from "graphql-tag";
 import useForm from "../lib/useForm";
 import DisplayError from "./ErrorMessage";
 import Form from "./styles/Form";
@@ -44,7 +45,14 @@ export default function UpdateProduct({ id }) {
     { data: updateData, error: updateError, loading: updateLoading },
   ] = useMutation(UPDATE_PRODUCT_MUTATION);
   // 2.5 Create some state for the form inputs:
-  const { inputs, handleChange, clearForm, resetForm } = useForm(data?.Product);
+  const { inputs, handleChange, clearForm, resetForm } = useForm(
+    data?.Product || {
+      name: "",
+      description: "",
+      price: "",
+    }
+  );
+  console.log(inputs);
   if (loading) return <p>loading...</p>;
   // 3. We need the form to handle the updates
   return (
@@ -59,6 +67,7 @@ export default function UpdateProduct({ id }) {
             price: inputs.price,
           },
         }).catch(console.error);
+        console.log(res);
         // Submit the inputfields to the backend:
         // TODO: Handle Submit!!!
         // const res = await createProduct();

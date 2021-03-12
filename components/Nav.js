@@ -13,8 +13,12 @@ export default function Nav() {
       <Link href="/products">Products</Link>
       {user && (
         <>
-          <Link href="/sell">Sell</Link>
+          {["Ross MacDonald", "Nicole MacDonald"].includes(user.name) && (
+            <Link href="/sell">Sell</Link>
+          )}
           <Link href="/orders">Orders</Link>
+          <Link href="/orders">About</Link>
+
           <Link href="/account">Account</Link>
           <SignOut />
           <button type="button" onClick={openCart}>

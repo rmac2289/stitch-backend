@@ -1,4 +1,5 @@
-import { gql, useMutation } from "@apollo/client";
+import gql from "graphql-tag";
+import { useMutation } from "@apollo/client";
 import Form from "./styles/Form";
 import useForm from "../lib/useForm";
 import Error from "./ErrorMessage";
@@ -32,9 +33,13 @@ export default function Reset({ token }) {
   const successfulError = data?.redeemUserPasswordResetToken?.code
     ? data?.redeemUserPasswordResetToken
     : undefined;
+  console.log(error);
   async function handleSubmit(e) {
     e.preventDefault(); // stop the form from submitting
+    console.log(inputs);
     const res = await reset().catch(console.error);
+    console.log(res);
+    console.log({ data, loading, error });
     resetForm();
     // Send the email and password to the graphqlAPI
   }
@@ -44,7 +49,7 @@ export default function Reset({ token }) {
       <Error error={error || successfulError} />
       <fieldset>
         {data?.redeemUserPasswordResetToken === null && (
-          <p>Success! You can Now sign in.</p>
+          <p>Success! You can Now sign in</p>
         )}
 
         <label htmlFor="email">

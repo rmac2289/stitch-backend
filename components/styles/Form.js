@@ -5,7 +5,6 @@ const loading = keyframes`
     background-position: 0 0;
     /* rotate: 0; */
   }
-
   to {
     background-position: 100% 100%;
     /* rotate: 360deg; */
@@ -33,13 +32,13 @@ const Form = styled.form`
     border: 1px solid black;
     &:focus {
       outline: 0;
-      border-color: rgb(110, 2, 83);
+      border-color: var(--theme-main);
     }
   }
   button,
   input[type="submit"] {
     width: auto;
-    background: rgb(110, 2, 83);
+    background: var(--theme-main);
     color: white;
     border: 0;
     font-size: 2rem;
@@ -49,7 +48,6 @@ const Form = styled.form`
   fieldset {
     border: 0;
     padding: 0;
-
     &[disabled] {
       opacity: 0.5;
     }
@@ -59,9 +57,9 @@ const Form = styled.form`
       display: block;
       background-image: linear-gradient(
         to right,
-        rgb(110, 2, 83) 0%,
-        rgba(110, 2, 83, 0.5) 50%,
-        rgb(110, 2, 83) 100%
+        var(--theme-main) 0%,
+        rgba(110, 2, 83, 0.4) 50%,
+        var(--theme-main) 100%
       );
     }
     &[aria-busy="true"]::before {

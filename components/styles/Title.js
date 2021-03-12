@@ -6,7 +6,7 @@ const Title = styled.h3`
   margin-top: -3rem;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
   a {
-    background: rgb(110, 2, 83);
+    background: var(--theme-main);
     display: inline;
     line-height: 1.3;
     font-size: 4rem;

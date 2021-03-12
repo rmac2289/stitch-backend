@@ -1,4 +1,5 @@
-import { gql, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
+import gql from "graphql-tag";
 import { CURRENT_USER_QUERY } from "./User";
 
 const SIGN_OUT_MUTATION = gql`

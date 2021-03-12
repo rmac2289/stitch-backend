@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
     --gray: var(--grey);
     --lightGrey: #e1e1e1;
     --lightGray: var(---lightGray);
+    --theme-main: #184018;
     --offWhite: #ededed;
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
@@ -37,11 +38,13 @@ const GlobalStyles = createGlobalStyle`
     color: var(---black);
   }
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
   button {
-    font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+    cursor: pointer;
   }
+  
 `;
 
 const InnerStyles = styled.div`
@@ -50,7 +53,7 @@ const InnerStyles = styled.div`
   padding: 2rem;
 `;
 
-export default function Page({ children, cool }) {
+export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
@@ -61,6 +64,5 @@ export default function Page({ children, cool }) {
 }
 
 Page.propTypes = {
-  cool: PropTypes.string,
   children: PropTypes.any,
 };

@@ -1,7 +1,7 @@
-import { gql, useMutation } from "@apollo/client";
+import gql from "graphql-tag";
+import { useMutation } from "@apollo/client";
 import Form from "./styles/Form";
 import useForm from "../lib/useForm";
-import { CURRENT_USER_QUERY } from "./User";
 import Error from "./ErrorMessage";
 
 const SIGNUP_MUTATION = gql`
@@ -21,8 +21,8 @@ const SIGNUP_MUTATION = gql`
 export default function SignUp() {
   const { inputs, handleChange, resetForm } = useForm({
     email: "",
-    password: "",
     name: "",
+    password: "",
   });
   const [signup, { data, loading, error }] = useMutation(SIGNUP_MUTATION, {
     variables: inputs,
@@ -30,21 +30,22 @@ export default function SignUp() {
     // refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
   async function handleSubmit(e) {
-    e.preventDefault();
-    await signup().catch(console.error);
+    e.preventDefault(); // stop the form from submitting
+    console.log(inputs);
+    const res = await signup().catch(console.error);
+    console.log(res);
+    console.log({ data, loading, error });
     resetForm();
     // Send the email and password to the graphqlAPI
   }
-
   return (
     <Form method="POST" onSubmit={handleSubmit}>
-      <h2>Sign Up For An Account</h2>
+      <h2>Sign Up For an Account</h2>
       <Error error={error} />
       <fieldset>
         {data?.createUser && (
           <p>
-            Signed up with {data.createUser.email} - Please go ahead and sign
-            in!
+            Signed up with {data.createUser.email} - Please Go Head and Sign in!
           </p>
         )}
         <label htmlFor="email">

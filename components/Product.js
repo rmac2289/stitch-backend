@@ -5,8 +5,11 @@ import PriceTag from "./styles/PriceTag";
 import formatMoney from "../lib/formatMoney";
 import DeleteProduct from "./DeleteProduct";
 import AddToCart from "./AddToCart";
-
+import { useUser } from "./User";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 export default function Product({ product }) {
+  const me = useUser();
   return (
     <ItemStyles>
       <img
@@ -19,18 +22,34 @@ export default function Product({ product }) {
       <PriceTag>{formatMoney(product.price)}</PriceTag>
       <p>{product.description}</p>
       <div className="buttonList">
-        <Link
-          href={{
-            pathname: "update",
-            query: {
-              id: product.id,
-            },
-          }}
-        >
-          Edit ✏️
-        </Link>
+        {["Ross MacDonald", "Nicole MacDonald"].includes(me?.name) && (
+          <>
+            <Link
+              href={{
+                pathname: "/update",
+                query: {
+                  id: product.id,
+                },
+              }}
+            >
+              <button
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <FontAwesomeIcon
+                  style={{ marginRight: "5px", fontSize: "12px" }}
+                  icon={faEdit}
+                />
+                Edit
+              </button>
+            </Link>
+            <DeleteProduct id={product.id}>Delete</DeleteProduct>
+          </>
+        )}
         <AddToCart id={product.id} />
-        <DeleteProduct id={product.id}>Delete</DeleteProduct>
       </div>
     </ItemStyles>
   );
