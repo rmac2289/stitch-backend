@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
     --gray: var(--grey);
     --lightGrey: #e1e1e1;
     --lightGray: var(---lightGray);
-    --theme-main: #184018;
+    --theme-main: #263e25;
     --offWhite: #ededed;
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
@@ -27,6 +27,10 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
+    background: linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.8)),url(background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;

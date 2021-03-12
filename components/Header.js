@@ -5,10 +5,17 @@ import Nav from "./Nav";
 import Search from "./Search";
 
 const Logo = styled.h1`
-  font-size: 4rem;
+  font-size: 2.75rem;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
   margin-left: 2rem;
   position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background: var(--theme-main);
   a {
     color: white;
@@ -22,11 +29,6 @@ const Logo = styled.h1`
 `;
 
 const HeaderStyles = styled.header`
-  background: url(background.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top;
   .bar {
     border-bottom: 10px solid var(--theme-main);
     display: grid;
@@ -46,7 +48,14 @@ export default function Header() {
     <HeaderStyles>
       <div className="bar">
         <Logo>
-          <Link href="/">Stitched by Nicole</Link>
+          <Link href="/">
+            <a>
+              stitched <br />{" "}
+              <span style={{ fontSize: "2.25rem", fontWeight: "100" }}>
+                by Nicole
+              </span>
+            </a>
+          </Link>
         </Logo>
         <Nav />
       </div>
