@@ -4,8 +4,10 @@ const NavStyles = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
-  justify-self: end;
   font-size: 2rem;
+  width: 100%;
+  justify-content: flex-end;
+  border-top: 5px solid var(--theme-main);
   a,
   button {
     padding: 1rem 3rem;
@@ -15,7 +17,6 @@ const NavStyles = styled.ul`
     font-weight: 900;
     font-size: 1em;
     background: none;
-    color: var(--theme-main);
     border: 0;
     cursor: pointer;
     @media (max-width: 700px) {

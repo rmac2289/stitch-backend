@@ -36,6 +36,8 @@ const SearchStyles = styled.div`
   position: relative;
   input {
     width: 100%;
+    background: transparent;
+
     padding: 10px;
     border: 0;
     font-size: 1.5rem;

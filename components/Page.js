@@ -16,8 +16,13 @@ const GlobalStyles = createGlobalStyle`
     --gray: var(--grey);
     --lightGrey: #e1e1e1;
     --lightGray: var(---lightGray);
-    --theme-main: #263e25;
+    --theme-main: rgb(40,54,24);
+    --light-green: rgb(96,108,56);
+    --tan: rgba(218,215,205,0.3);
+    --light-brown: rgb(221,161,94,0.15);
+    --brown: rgb(188,108,37);
     --offWhite: #ededed;
+    --lightbrown: rgba(210,180,140,0.1);
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
@@ -27,15 +32,13 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    background: linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.8)),url(background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
     line-height:2;
+    background: var(--tan)
+    
   }
   a {
     text-decoration: none;
