@@ -25,6 +25,11 @@ const ProductsListStyles = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 60px;
+
+  padding: 2rem;
+  margin: 0 auto;
+  border-radius: 10px;
+  max-width: var(--maxWidth);
 `;
 
 export default function Products({ page }) {
@@ -37,12 +42,10 @@ export default function Products({ page }) {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
   return (
-    <div>
-      <ProductsListStyles>
-        {data.allProducts.map((product) => (
-          <Product key={product.id} product={product} />
-        ))}
-      </ProductsListStyles>
-    </div>
+    <ProductsListStyles>
+      {data?.allProducts.map((product) => (
+        <Product key={product.id} product={product} />
+      ))}
+    </ProductsListStyles>
   );
 }

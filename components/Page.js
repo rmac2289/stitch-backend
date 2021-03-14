@@ -18,15 +18,17 @@ const GlobalStyles = createGlobalStyle`
     --lightGray: var(---lightGray);
     --theme-main: rgb(40,54,24);
     --light-green: rgb(96,108,56);
-    --tan: rgba(218,215,205,0.3);
+    --tan: rgba(218,215,205,0.2);
     --light-brown: rgb(221,161,94,0.15);
-    --brown: rgb(188,108,37);
+    --brown: rgb(188,108,37,0.35);
     --offWhite: #ededed;
     --lightbrown: rgba(210,180,140,0.1);
-    --maxWidth: 1000px;
-    --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
+    --maxWidth: 1200px;
+    --bs: 8px 12px 24px -10px rgba(0,0,0,0.3);
     box-sizing: border-box;
     font-size: 10px;
+    
+    
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -36,9 +38,8 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-    line-height:2;
-    background: var(--tan)
-    
+    line-height: 2;
+    background: var(--tan);
   }
   a {
     text-decoration: none;
@@ -55,8 +56,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const InnerStyles = styled.div`
-  max-width: var(--maxWidth);
-  margin: 0 auto;
+  margin: 0;
   padding: 2rem;
 `;
 

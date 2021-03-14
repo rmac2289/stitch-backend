@@ -5,20 +5,20 @@ import Nav from "./Nav";
 import Search from "./Search";
 import Image from "next/image";
 const Logo = styled.h1`
-  font-size: 6rem;
+  font-size: 4rem;
   width: 100%;
   margin-left: 2rem;
   padding: 0 2rem;
   position: relative;
   z-index: 2;
   display: flex;
-  background: linear-gradient(var(--tan), var(--tan)), url(pin.png);
-  background-size: 55%;
-  background-position: 140% 50%;
-  background-repeat: no-repeat;
   margin: 0;
   align-items: center;
   text-align: center;
+  background: var(--tan);
+  @media (min-width: 700px) {
+    font-size: 6rem;
+  }
 
   a {
     color: var(--theme-main);
@@ -40,7 +40,6 @@ const HeaderStyles = styled.header`
   .sub-bar {
     display: grid;
     grid-template-columns: 1fr auto;
-    border-bottom: 1px solid black;
   }
 `;
 
@@ -60,9 +59,7 @@ export default function Header() {
         </Logo>
         <Nav />
       </div>
-      <div className="sub-bar">
-        <Search />
-      </div>
+      <div className="sub-bar"></div>
       <Cart />
     </HeaderStyles>
   );

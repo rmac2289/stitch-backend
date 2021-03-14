@@ -5,14 +5,18 @@ import PriceTag from "./styles/PriceTag";
 import formatMoney from "../lib/formatMoney";
 import DeleteProduct from "./DeleteProduct";
 import AddToCart from "./AddToCart";
+import { useRouter } from "next/router";
 import { useUser } from "./User";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 export default function Product({ product }) {
   const me = useUser();
+  const router = useRouter();
+
   return (
     <ItemStyles>
       <img
+        onClick={() => router.push(`/product/${product.id}`)}
         src={product?.photo?.image?.publicUrlTransformed}
         alt={product.name}
       />

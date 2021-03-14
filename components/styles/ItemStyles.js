@@ -7,10 +7,15 @@ const ItemStyles = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  transition: 0.25s all ease;
+  &:hover {
+    transform: scale(1.02);
+  }
   img {
     width: 100%;
     height: 400px;
     object-fit: cover;
+    cursor: pointer;
   }
   p {
     line-height: 2;

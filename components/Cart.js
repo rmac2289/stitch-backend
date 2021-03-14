@@ -54,7 +54,7 @@ export default function Cart() {
   return (
     <CartStyles open={cartOpen}>
       <header>
-        <Supreme>{me.name}'s Cart</Supreme>
+        <Supreme>{me.name.split(" ")[0]}'s Cart</Supreme>
         <CloseButton onClick={closeCart}>&times;</CloseButton>
       </header>
       <ul>
