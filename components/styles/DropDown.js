@@ -31,7 +31,12 @@ const glow = keyframes`
     box-shadow: 0 0 10px 1px black;
   }
 `;
-
+const SearchContainerStyles = styled.div`
+  background-image: url(/search.png);
+  background-repeat: no-repeat;
+  background-size: 1.25%;
+  background-position: left;
+`;
 const SearchStyles = styled.div`
   position: relative;
   input {
@@ -39,6 +44,7 @@ const SearchStyles = styled.div`
     background: transparent;
 
     padding: 10px;
+    margin-left: 15px;
     border: 0;
     font-size: 1.5rem;
     outline: none;
@@ -48,4 +54,4 @@ const SearchStyles = styled.div`
   }
 `;
 
-export { DropDown, DropDownItem, SearchStyles };
+export { DropDown, DropDownItem, SearchStyles, SearchContainerStyles };

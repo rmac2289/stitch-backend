@@ -39,7 +39,6 @@ export default function Pagination({ page }) {
           <a aria-disabled={page >= pageCount}>Next →</a>
         </Link>
       </PaginationStyles>
-      <Search />
     </>
   );
 }

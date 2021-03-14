@@ -28,7 +28,6 @@ const ProductsListStyles = styled.div`
 
   padding: 2rem;
   margin: 0 auto;
-  border-radius: 10px;
   max-width: var(--maxWidth);
 `;
 

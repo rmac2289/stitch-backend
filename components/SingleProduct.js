@@ -15,6 +15,7 @@ const ProductStyles = styled.div`
   align-items: top;
   gap: 2rem;
   img {
+    border-radius: 10px;
     width: 100%;
     object-fit: contain;
   }

@@ -4,6 +4,7 @@ import Form from "./styles/Form";
 import useForm from "../lib/useForm";
 import { CURRENT_USER_QUERY } from "./User";
 import Error from "./ErrorMessage";
+import { useRouter } from "next/router";
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -24,6 +25,7 @@ const SIGNIN_MUTATION = gql`
 `;
 
 export default function SignIn() {
+  const router = useRouter();
   const { inputs, handleChange, resetForm } = useForm({
     email: "",
     password: "",
@@ -33,12 +35,14 @@ export default function SignIn() {
     // refetch the currently logged in user
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
-  console.log(data);
+
   async function handleSubmit(e) {
     e.preventDefault(); // stop the form from submitting
     const res = await signin();
-    console.log(res);
     resetForm();
+    res.data.authenticateUserWithPassword.code !== "FAILURE"
+      ? router.push("/")
+      : null;
     // Send the email and password to the graphqlAPI
   }
   const error =

@@ -12,9 +12,10 @@ const loading = keyframes`
 `;
 
 const Form = styled.form`
-  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 6px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   background: rgba(0, 0, 0, 0.02);
-  border: 5px solid white;
+  border: 3px solid var(--tan);
   padding: 20px;
   font-size: 1.5rem;
   line-height: 1.5;
@@ -26,10 +27,11 @@ const Form = styled.form`
   input,
   textarea,
   select {
+    border-radius: 2px;
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid black;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    border: 1px solid var(--theme-main);
     &:focus {
       outline: 0;
       border-color: var(--theme-main);
@@ -37,6 +39,7 @@ const Form = styled.form`
   }
   button,
   input[type="submit"] {
+    border-radius: 2px;
     width: auto;
     background: var(--theme-main);
     color: white;
@@ -58,7 +61,7 @@ const Form = styled.form`
       background-image: linear-gradient(
         to right,
         var(--theme-main) 0%,
-        rgba(110, 2, 83, 0.4) 50%,
+        var(--light-green) 50%,
         var(--theme-main) 100%
       );
     }

@@ -8,7 +8,6 @@ const PaginationStyles = styled.div`
   align-content: center;
   background: rgba(255, 255, 255, 0.75);
   color: var(--theme-main);
-  box-shadow: var(--bs);
   margin: 2rem 0;
   border: 1px solid var(--theme-main);
   border-radius: 10px;
