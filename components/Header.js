@@ -8,18 +8,20 @@ const Logo = styled.h1`
   font-size: 4rem;
   width: 100%;
   margin-left: 2rem;
-  padding: 0 2rem;
+  padding: 0 3rem;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: 2;
   display: flex;
   margin: 0;
   align-items: center;
   text-align: center;
-  background: var(--tan);
+  background-color: var(--tan);
   @media (min-width: 700px) {
     font-size: 6rem;
   }
-
   a {
     color: var(--theme-main);
     text-decoration: none;
@@ -56,6 +58,7 @@ export default function Header() {
               </span>
             </a>
           </Link>
+          <Image src="/heart.png" width="85" height="72" />
         </Logo>
         <Nav />
       </div>
