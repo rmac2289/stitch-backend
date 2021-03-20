@@ -4,6 +4,7 @@ import Cart from "./Cart";
 import Nav from "./Nav";
 import Search from "./Search";
 import Image from "next/image";
+
 const Logo = styled.h1`
   font-size: 4rem;
   width: 100%;

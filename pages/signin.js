@@ -2,7 +2,7 @@ import styled from "styled-components";
 import RequestReset from "../components/RequestReset";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
-
+import { motion } from "framer-motion";
 const GridStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -12,9 +12,27 @@ const GridStyles = styled.div`
 export default function SignInPage() {
   return (
     <GridStyles>
-      <SignIn />
-      <SignUp />
-      <RequestReset />
+      <motion.div
+        initial={{ x: -200 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <SignIn />
+      </motion.div>
+      <motion.div
+        initial={{ y: 300 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <SignUp />
+      </motion.div>
+      <motion.div
+        initial={{ x: 200 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <RequestReset />
+      </motion.div>
     </GridStyles>
   );
 }

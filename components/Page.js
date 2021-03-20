@@ -25,6 +25,8 @@ const GlobalStyles = createGlobalStyle`
     --lightbrown: rgba(210,180,140,0.1);
     --maxWidth: 1200px;
     --bs: 8px 12px 24px -10px rgba(0,0,0,0.3);
+    --bs-s: 4px 6px 12px -5px rgba(0,0,0,0.3);
+
     box-sizing: border-box;
     font-size: 10px;
     

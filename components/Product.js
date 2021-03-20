@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { useUser } from "./User";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
+
 export default function Product({ product }) {
   const me = useUser();
   const router = useRouter();

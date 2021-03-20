@@ -5,6 +5,9 @@ const Dot = styled.div`
   background: var(--theme-main);
   color: white;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.5rem;
   line-height: 2rem;
   min-width: 3rem;

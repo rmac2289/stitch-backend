@@ -11,6 +11,7 @@ const PaginationStyles = styled.div`
   margin: 2rem 0;
   border: 1px solid var(--theme-main);
   border-radius: 10px;
+  box-shadow: var(--bs-s);
   & > * {
     margin: 0;
     padding: 15px 30px;
