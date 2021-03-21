@@ -1,16 +1,17 @@
 import styled from "styled-components";
-import CartStyles from "./styles/CartStyles";
-import CloseButton from "./styles/CloseButton";
-import Supreme from "./styles/Supreme";
+import CartStyles, { CloseCartButton } from "./styles/CartStyles";
+import { CartHeaderText } from "./styles/CartStyles";
 import formatMoney from "../lib/formatMoney";
 import { useUser } from "./User";
 import calcTotalPrice from "../lib/calcTotalPrice";
 import { useCart } from "../lib/cartState";
 import RemoveFromCart from "./RemoveFromCart";
 import Checkout from "./Checkout";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 
 const CartItemStyles = styled.li`
-  padding: 1rem 0;
+  padding: 1rem;
   border-bottom: 1px solid var(--lightGrey);
   display: grid;
   grid-template-columns: 1fr 2fr 0.5fr;
@@ -22,6 +23,7 @@ const CartItemStyles = styled.li`
     margin: 0;
   }
 `;
+const CartList = styled.ul``;
 
 function CartItem({ cartItem }) {
   const { product } = cartItem;
@@ -54,14 +56,16 @@ export default function Cart() {
   return (
     <CartStyles open={cartOpen}>
       <header>
-        <Supreme>{me.name.split(" ")[0]}'s Cart</Supreme>
-        <CloseButton onClick={closeCart}>&times;</CloseButton>
+        <CloseCartButton onClick={closeCart}>
+          <FontAwesomeIcon icon={faLongArrowAltLeft} />
+        </CloseCartButton>
+        <CartHeaderText>My Cart</CartHeaderText>
       </header>
-      <ul>
+      <CartList>
         {me.cart.map((cartItem) => (
           <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
-      </ul>
+      </CartList>
       <footer>
         <p>{formatMoney(calcTotalPrice(me.cart))}</p>
         <Checkout />

@@ -6,8 +6,10 @@ const BigButton = styled.button`
   font-size: 3rem;
   background: none;
   border: 0;
+  color: var(--theme-main);
+  transition: 0.5s all linear;
   &:hover {
-    color: var(--purple);
+    color: var(--light-green);
     cursor: pointer;
   }
 `;

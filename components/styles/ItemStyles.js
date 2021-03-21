@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const ItemStyles = styled.div`
-  background: white;
-  border: 1px solid var(--offWhite);
+  background: rgba(255, 255, 255, 0.8);
   box-shadow: var(--bs);
   position: relative;
   display: flex;
@@ -30,11 +29,12 @@ const ItemStyles = styled.div`
     border-top: 1px solid var(--lightGrey);
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 1px;
-    background: var(--lightGrey);
+    background: var(--eggshell);
     & > * {
-      background: white;
+      background: var(--grey);
       border: 0;
       font-size: 1rem;
+      color: white;
       padding: 1rem;
     }
   }

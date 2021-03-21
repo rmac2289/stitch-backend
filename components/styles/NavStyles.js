@@ -4,12 +4,11 @@ const NavStyles = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
+  background: var(--lightolive);
   font-size: 2rem;
   width: 100%;
   justify-content: flex-end;
   align-content: center;
-  background: var(--tan);
-  border-top: 5px solid var(--theme-main);
   a,
   button {
     padding: 0 10px;
@@ -18,6 +17,7 @@ const NavStyles = styled.ul`
     position: relative;
     font-weight: 900;
     font-size: 1em;
+    color: var(--light);
     background: none;
     border: 0;
     cursor: pointer;
@@ -28,7 +28,7 @@ const NavStyles = styled.ul`
 
       &:after {
         height: 2px;
-        background: var(--theme-main);
+        background: var(--oxblood);
         content: "";
         width: 0;
         position: absolute;

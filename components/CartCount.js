@@ -2,8 +2,8 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
 
 const Dot = styled.div`
-  background: var(--theme-main);
-  color: white;
+  background: var(--eggshell);
+  color: var(--darkred);
   border-radius: 50%;
   display: flex;
   justify-content: center;

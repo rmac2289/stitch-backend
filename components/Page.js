@@ -10,15 +10,18 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
   html {
+    --lightolive: #818f7d;
+    --olive: #687864;
+    --darkblue: #31708E;
+    --medblue: #5085A5;
+    --lightblue: #8FC1E3;
+    --light: #F7F9FB;
     --red: #ff0000;
     --black: #393939;
-    --grey: #3A3A3A;
-    --gray: var(--grey);
     --lightGrey: #e1e1e1;
     --lightGray: var(---lightGray);
-    --theme-main: rgb(40,54,24);
+    --theme-main: black;
     --light-green: rgb(96,108,56);
-    --tan: rgba(218,215,205,0.2);
     --light-brown: rgb(221,161,94,0.15);
     --brown: rgb(188,108,37,0.35);
     --offWhite: #ededed;
@@ -41,7 +44,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 1.5rem;
     line-height: 2;
-    background: var(--tan);
   }
   a {
     text-decoration: none;
@@ -60,6 +62,7 @@ const GlobalStyles = createGlobalStyle`
 const InnerStyles = styled.div`
   margin: 0;
   padding: 2rem;
+  background: linear-gradient(0deg, var(--light), 98%, var(--lightolive));
 `;
 
 export default function Page({ children }) {

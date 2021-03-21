@@ -3,8 +3,9 @@ import styled, { keyframes } from "styled-components";
 const DropDown = styled.div`
   position: absolute;
   width: 100%;
+
   z-index: 2;
-  border-top: 1px solid lightgrey;
+  border-top: 1px solid var(--blueberry);
   outline: none;
 `;
 
