@@ -7,11 +7,14 @@ const ItemStyles = styled.div`
   display: flex;
   flex-direction: column;
   transition: 0.25s all ease;
+  border-radius: 5px;
 
   &:hover {
     transform: scale(1.05);
   }
   img {
+    border-radius: 5px;
+
     width: 100%;
     height: 250px;
     object-fit: cover;

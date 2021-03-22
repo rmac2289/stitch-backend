@@ -7,6 +7,8 @@ const NavStyles = styled.ul`
   background: var(--lightolive);
   font-size: 2rem;
   width: 100%;
+  z-index: 1;
+  position: relative;
   justify-content: flex-end;
   align-content: center;
   a,
@@ -28,7 +30,7 @@ const NavStyles = styled.ul`
 
       &:after {
         height: 2px;
-        background: var(--oxblood);
+        background: var(--light);
         content: "";
         width: 0;
         position: absolute;
