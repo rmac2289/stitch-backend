@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import styled from "styled-components";
 import { perPage } from "../config";
 import Product from "./Product";
-
+import ItemStyles from "../components/styles/ItemStyles";
 export const ALL_PRODUCTS_QUERY = gql`
   query ALL_PRODUCTS_QUERY($skip: Int = 0, $first: Int) {
     allProducts(first: $first, skip: $skip) {
@@ -23,11 +23,10 @@ export const ALL_PRODUCTS_QUERY = gql`
 
 const ProductsListStyles = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
-
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
   padding: 2rem;
-  margin: 0 auto;
+  margin: 1rem auto 0 auto;
   max-width: var(--maxWidth);
 `;
 

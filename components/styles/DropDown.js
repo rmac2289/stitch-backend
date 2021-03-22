@@ -5,7 +5,7 @@ const DropDown = styled.div`
   width: 100%;
 
   z-index: 2;
-  border-top: 1px solid var(--blueberry);
+  border-top: 1px solid var(--olive);
   outline: none;
 `;
 
@@ -18,7 +18,7 @@ const DropDownItem = styled.div`
   display: flex;
   align-items: center;
   border-left: 10px solid
-    ${(props) => (props.highlighted ? props.theme.lightgrey : "white")};
+    ${(props) => (props.highlighted ? "var(--darkblue)" : "white")};
   img {
     margin-right: 10px;
   }

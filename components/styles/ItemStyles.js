@@ -7,12 +7,13 @@ const ItemStyles = styled.div`
   display: flex;
   flex-direction: column;
   transition: 0.25s all ease;
+
   &:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
   }
   img {
     width: 100%;
-    height: 400px;
+    height: 250px;
     object-fit: cover;
     cursor: pointer;
   }
@@ -26,15 +27,15 @@ const ItemStyles = styled.div`
   .buttonList {
     display: grid;
     width: 100%;
-    border-top: 1px solid var(--lightGrey);
+    border-top: 1px solid var(--darkblue);
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 1px;
-    background: var(--eggshell);
+    background: var(--light);
     & > * {
-      background: var(--grey);
+      background: var(--light);
       border: 0;
       font-size: 1rem;
-      color: white;
+      color: var(--darkblue);
       padding: 1rem;
     }
   }

@@ -9,20 +9,20 @@ const Logo = styled.h1`
   font-size: 4rem;
   width: 100%;
   margin-left: 2rem;
-
+  padding: 0 2rem 0 1rem;
   position: relative;
   display: flex;
   background: var(--olive);
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-  display: flex;
   margin: 0;
   align-items: center;
   text-align: center;
   @media (min-width: 700px) {
     font-size: 6rem;
   }
+
   a {
     color: var(--light);
     text-decoration: none;
@@ -67,9 +67,7 @@ export default function Header() {
               </a>
             </Link>
 
-            <Image src="/warmheart.png" width="85" height="72" />
-
-            <div className="sub-bar"></div>
+            <Image src="/lightheart.png" width="85" height="72" />
 
             <Cart />
             <svg

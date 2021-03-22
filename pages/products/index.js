@@ -8,11 +8,10 @@ export default function OrderPage() {
   return (
     <div>
       <Search />
-
-      <Pagination page={page || 1} />
-
       <Products page={page || 1} />
-      <Pagination page={page || 1} />
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <Pagination page={page || 1} />
+      </div>{" "}
     </div>
   );
 }
